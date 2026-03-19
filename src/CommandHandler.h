@@ -15,11 +15,13 @@ constexpr size_t IMPORT_PROGRESS_FREQUENCY = 5000;
 
 constexpr char HELP_MESSAGE[] = "The following commands are supported:";
 constexpr char STARTUP_MESSAGE[] = R"(
- _  _  ____  ____   __   ____   ___  _  _ 
-/ )( \/ ___)(  __) / _\ (  _ \ / __)/ )( \
-\ \/ /\___ \ ) _) /    \ )   /( (__ ) __ (
- \__/ (____/(____)\_/\_/(__\_) \___)\_)(_/
------ Vector Similarity Search Engine -----
+_________                   _____     ___________      ___    _________
+__  ____/_____________________  /________  /__  /_____ __ |  / /_  ___/
+_  /    _  __ \_  __ \_  ___/  __/  _ \_  /__  /_  __ `/_ | / /_____ \ 
+/ /___  / /_/ /  / / /(__  )/ /_ /  __/  / _  / / /_/ /__ |/ / ____/ / 
+\____/  \____//_/ /_//____/ \__/ \___//_/  /_/  \__,_/ _____/  /____/  
+                                                                       
+------------------- Vector Similarity Search Engine -------------------
 Type 'help' for a list of commands.
 )";
 

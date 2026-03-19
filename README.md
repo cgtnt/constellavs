@@ -1,9 +1,9 @@
-# VSearch
+# ConstellaVS
 ## Overview
-VSearch is a vector similarity search engine indexed by Navigable Small World (NSW) graphs, capable of returning approximate k-nearest neighbors of an arbitrary query vector. The executable processes commands on the standard input and prints results to the standard output, allowing it to be used interactively in the terminal or programmatically as part of a larger pipeline.
+ConstellaVS is a vector similarity search engine indexed by Navigable Small World (NSW) graphs, capable of returning approximate k-nearest neighbors of an arbitrary query vector. The executable processes commands on the standard input and prints results to the standard output, allowing it to be used interactively in the terminal or programmatically as part of a larger pipeline.
 
 ## Configuration
-The engine is configured at startup using command-line arguments. Usage: ```./vsearch <options>```. Any options which are not provided as CLI arguments will assume their default values listed below.
+The engine is configured at startup using command-line arguments. Usage: ```./constella <options>```. Any options which are not provided as CLI arguments will assume their default values listed below.
 
 | Short |      Long      | Description                                                                                                                                                                                                                                                                                                                                  |  Range                     | Default        |
 | ----- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------- |
@@ -15,7 +15,7 @@ The engine is configured at startup using command-line arguments. Usage: ```./vs
 |  N/A  | --max-entry-pt | The number of entrypoints which will be used for search operations during both insertion and querying. Higher values decrease risk of search "getting stuck" in local minima and returning suboptimal results - which is especially present in fragmented index graphs or low connectivity graphs, but might increase search time.           | 1 .. max_size_t            |  10            |     
 
 Example:
-```./vsearch --dimension 50 --distance cosine -c 24```
+```./constella --dimension 50 --distance cosine -c 24```
 
 ## Commands - interface 
 Once the executable starts, the command interface will start on standard input, printing ``>`` which indicates a command prompt. Commands are executed sequentially, one per line.
@@ -79,7 +79,7 @@ Performs a soft-deletion of the vector with the given ID from the engine. This m
 ```
 
 ## Out of scope / architectural roadmap
-While VSearch meets its scope of requirements, the implementation can be further improved by making the following changes:
+While ConstellaVS meets its scope of requirements, the implementation can be further improved by making the following changes:
 - Memory locality: The current implementation stores vectors as individual objects - transitioning to a flat-array style of storage would significantly reduce cache misses during the k-NN search.
 - Hierarchical Navigable Small World indexing: an algorithmic improvement that could be made is building a hierarchy of NSW index graphs instead of relying on one graph.
 - Concurrency: the current implementation is single-threaded, parallelizing for example the distance calculations of the candidates in the k-NN search would allow for faster search.

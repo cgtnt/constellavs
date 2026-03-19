@@ -15,4 +15,4 @@ set(SOURCES
     Vector.cpp
 )
 
-add_executable(vsearch ${SOURCES})
+add_executable(constella ${SOURCES})
