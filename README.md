@@ -6,7 +6,9 @@ ConstellaVS is a vector similarity search engine indexed by Navigable Small Worl
 ### Prerequisites
 
 To build ConstellaVS from source, ensure your system meets the following requirements:
+
     - CMake: Version 3.15 or higher.
+
     - Compiler: A C++20 compatible compiler (e.g., GCC 10+, Clang 10+, or MSVC 19.29+).
 
 ### Building from Source
