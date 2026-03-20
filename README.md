@@ -2,6 +2,39 @@
 ## Overview
 ConstellaVS is a vector similarity search engine indexed by Navigable Small World (NSW) graphs, capable of returning approximate k-nearest neighbors of an arbitrary query vector. The executable processes commands on the standard input and prints results to the standard output, allowing it to be used interactively in the terminal or programmatically as part of a larger pipeline.
 
+## Build Instructions
+### Prerequisites
+
+To build ConstellaVS from source, ensure your system meets the following requirements:
+    - CMake: Version 3.15 or higher.
+    - Compiler: A C++20 compatible compiler (e.g., GCC 10+, Clang 10+, or MSVC 19.29+).
+
+### Building from Source
+
+ConstellaVS uses a standard out-of-source CMake build process. Open your terminal and execute the following commands:
+
+```Bash
+
+# 1. Clone the repository
+git clone https://github.com/cgtnt/constellavs.git
+cd constellavs
+
+# 2. Create a build directory and navigate into it
+mkdir build && cd build
+
+# 3. Generate the build system files
+cmake ..
+
+# 4. Compile the executable (Release mode is highly recommended for performance)
+cmake --build . --config Release
+```
+
+Once compiled, the constella executable will be located in your build directory (or build/Release on Windows). You can verify the installation by running:
+
+```Bash
+./constella 
+```
+
 ## Configuration
 The engine is configured at startup using command-line arguments. Usage: ```./constella <options>```. Any options which are not provided as CLI arguments will assume their default values listed below.
 
